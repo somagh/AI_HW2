@@ -9,10 +9,10 @@ from sklearn.pipeline import Pipeline
 from sklearn import metrics
 import numpy as np
 from sklearn.model_selection import cross_val_score
-from hazm import *
+#from hazm import *
 
 
-data = load_files('./sath', encoding='utf-8')
+data = load_files('./data', encoding='utf-8')
 
 # count_vect = CountVectorizer()
 # X_train_counts = count_vect.fit_transform(data.data)

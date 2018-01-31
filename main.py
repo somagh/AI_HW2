@@ -9,7 +9,8 @@ from sklearn.pipeline import Pipeline
 from sklearn import metrics
 import numpy as np
 from sklearn.model_selection import cross_val_score
-#from hazm import *
+
+# from hazm import *
 
 
 data = load_files('./data', encoding='utf-8')
@@ -27,7 +28,8 @@ data = load_files('./data', encoding='utf-8')
 # print(X_train_tfidf)
 print(data)
 
-text_clf = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer()), ('clf', SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, random_state=42, max_iter=5, tol=None))])
+text_clf = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer()), (
+'clf', SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, random_state=42, max_iter=5, tol=None))])
 text_clf.fit(data.data, data.target)
 joblib.dump(text_clf, "model.txt")
 
@@ -37,8 +39,7 @@ acc = np.mean(predicted == data.target)
 
 scores = cross_val_score(text_clf, data.data, data.target, cv=2)
 
-
-print(np.array([2,3]).mean())
+print(np.array([2, 3]).mean())
 print(acc)
 print(metrics.classification_report(data.target, predicted, target_names=data.target_names))
 print(metrics.confusion_matrix(data.target, predicted))
@@ -53,5 +54,3 @@ print(text_clf)
 # arr = word_tokenize(data.data[1])
 # arr2 = [stemmer.stem(x) for x in arr]
 # print(word_tokenize(data.data[1]))
-
-

@@ -16,16 +16,12 @@ def normalize_input(train_content_file_address, train_label_file_address):
     # lemmatizer = Lemmatizer()
 
     for line in content_file:
-        # print(line)
         # text = normalizer.normalize(line)
         # arr = word_tokenize(text)
         # arr_stemmize = [stemmer.stem(x) for x in arr]
         # arr_lemmatize = [lemmatizer.lemmatize(x) for x in arr]
         # final_lemmatize = " ".join(arr_lemmatize)
         # final_stemmize = " ".join(arr_stemmize)
-        # print(final_stemmize)
-        # print(final_lemmatize)
-        # sys.exit()
         data.data.append(line)
 
     for line in label_file:

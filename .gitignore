@@ -1,6 +1,7 @@
 ./train.label
 ./train.content
 ./data
+./model.txt
 # Created by https://www.gitignore.io/api/python,pycharm
 
 ### PyCharm ###
